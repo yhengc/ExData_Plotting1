@@ -21,14 +21,15 @@ Sys.setlocale("LC_TIME", "English")
 png(filename = "plot3.png", width = 480, height = 480)
 
 #Plot the first line
-with(data = data, plot(Date, Sub_metering_1, type = "l", xlab = "", 
-                       ylab = "Energy sub metering"))
+with(data = data, {plot(Date, Sub_metering_1, type = "l", xlab = "", 
+                       ylab = "Energy sub metering")
 
-#Add the second line
-with(data = data, lines(Date, Sub_metering_2, type = "l", col = "red"))
+                  #Add the second line
+                  lines(Date, Sub_metering_2, type = "l", col = "red")
 
-#Add the third line
-with(data = data, lines(Date, Sub_metering_3, type = "l", col = "blue"))
+                  #Add the third line
+                  lines(Date, Sub_metering_3, type = "l", col = "blue")
+})
 
 #Add legend
 legend("topright", lty = "solid", col = c("black", "red", "blue"), 
